@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container marketing">
+	<div class="shadow-lg p-3 mb-5 bg-body rounded">
+		<div class="row featurette">
+			<div class="col-md-7">
+				<h2 class="featurette-heading">{{ recipe.title }}</h2>
+				<p class="lead">{{ recipe.description | safe }}</p>
+			</div>
+			<div class="col-md-5">
+				<img src="{{ recipe.image.url }}" height="500" и width="500" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+			</div>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="card-body">
+			<h2 class="featurette-heading">Инструкция приготовления:</h2>
+			<ul class="list-group">
+				{% for recipe_instruction in recipe_instructions %}
+					<li class="list-group-item">{{ recipe_instruction }}</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container marketing">
+	<div class="container">
+		<main>
+		<div class="py-5">
+			<h2>Вход</h2>
+		</div>
+	</div>
+<div class="container">
+	<div class="col-md-7 col-lg-8">
+		<form class="needs-validation" action="{% url 'user:login' %}" method="post" novalidate>
+			{% csrf_token %}
+			{{ form.as_p }}
+		<hr class="my-4">
+		<button class="w-100 btn btn-primary btn-lg" type="submit">Войти</button>
+		</form>
+	</div>
+</div>
+
+{% endblock %}

@@ -5,6 +5,48 @@ from django.urls import include, path
 
 urlpatterns = [
     path(
+        '',
+        include(
+            'homepage.urls',
+        ),
+        name='homepage',
+    ),
+    path(
+        'recipe/',
+        include(
+            'recipe.urls',
+        ),
+        name='recipe',
+    ),
+    path(
+        'sport/',
+        include(
+            'sport.urls',
+        ),
+        name='sport',
+    ),
+    path(
+        'mentalka/',
+        include(
+            'mentalka.urls',
+        ),
+        name='mentalka',
+    ),
+    path(
+        'feedback/',
+        include(
+            'feedback.urls',
+        ),
+        name='feedback',
+    ),
+    path(
+        'auth/',
+        include(
+            'user.urls',
+        ),
+        name='users',
+    ),
+    path(
         'tinymce/',
         include('tinymce.urls'),
         name='tinymce',

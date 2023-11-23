@@ -16,6 +16,7 @@ class Recipe(models.Model):
         unique=True,
     )
     description = HTMLField()
+    instructions = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
 
     @property

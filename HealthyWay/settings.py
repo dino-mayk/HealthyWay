@@ -1,5 +1,4 @@
 import os
-import sys
 from os.path import dirname, join
 from pathlib import Path
 
@@ -16,7 +15,11 @@ ALLOWED_HOSTS = [
 ]
 
 INSTALLED_APPS = [
+    'homepage.apps.HomepageConfig',
     'recipe.apps.RecipeConfig',
+    'sport.apps.SportConfig',
+    'user.apps.UserConfig',
+    'feedback.apps.FeedbackConfig',
     'tinymce',
     'sorl.thumbnail',
     'django_cleanup.apps.CleanupConfig',
@@ -101,3 +104,8 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR / 'static'
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
+
+LOGIN_URL = 'auth/login/'
+LOGIN_REDIRECT_URL = '/'
+
+AUTH_USER_MODEL = 'user.CustomUser'

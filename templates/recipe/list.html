@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container marketing">
+	<section class="py-5 text-center container">
+		<div class="row py-lg-5">
+			<div class="col-lg-6 col-md-8 mx-auto">
+				<h1 class="fw-light">Рецепты</h1>
+				<p class="lead text-body-secondary">Здесь какой-то текст про питание и подводка к рецептам</p>
+			</div>
+		</div>
+	</section>
+
+	<div class="album py-5 bg-body-tertiary">
+		<div class="container">
+			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+				{% for recipe in recipes %}
+					<div class="col">
+						{% include 'includes/recipe_card.html' with recipe=recipe %}
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

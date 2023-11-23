@@ -1,0 +1,11 @@
+<div class="card shadow-sm">
+    <img src="{{ recipe.image.url }}" height="225">
+    <div class="card-body">
+        <p class="card-text">{{ recipe.description | safe }}</p>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+                <a class="btn btn-outline-success btn-lg m-1" href="{% url 'recipe:detail' recipe.id %}">Открыть</a>
+            </div>
+        </div>
+    </div>
+</div>
