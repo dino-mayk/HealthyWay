@@ -7,18 +7,19 @@ from sorl.thumbnail import delete, get_thumbnail
 
 class CustomUser(AbstractUser):
     username = models.CharField(
-        'имя пользователя',
         max_length=150,
     )
     name = models.CharField(
-        'имя пользователя',
         max_length=150,
     )
     surname = models.CharField(
-        'имя пользователя',
         max_length=150,
     )
-    weight = models.IntegerField(
+    email = models.EmailField(
+        'email',
+        unique=True,
+    )
+    """weight = models.IntegerField(
         blank=True,
         null=True,
     )
@@ -29,10 +30,6 @@ class CustomUser(AbstractUser):
     age = models.IntegerField(
         blank=True,
         null=True,
-    )
-    email = models.EmailField(
-        'email',
-        unique=True,
     )
     GENDER_TYPES = [
         (True, 'Мужчина'),
@@ -48,7 +45,7 @@ class CustomUser(AbstractUser):
         verbose_name='аватар',
         help_text='загрузите картинку',
         default='default_avatar.jpg',
-    )
+    )"""
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = [
         'username',

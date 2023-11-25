@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container marketing">
+	<div class="container">
+		<main>
+		<div class="py-5">
+			<h2>Аккаунт</h2>
+		</div>
+	</div>
+	<div class="shadow-lg p-3 mb-5 bg-body rounded">
+		<div class="row featurette">
+				<blockquote class="blockquote">
+					<div class="mb-3">
+						<label for="exampleFormControlInput1" class="form-label">Никнейм</label>
+						<input class="form-control" type="text" placeholder="{{user.username }}" readonly>
+					</div>
+					<div class="mb-3">
+						<label for="exampleFormControlInput1" class="form-label">Имя</label>
+						<input class="form-control" type="text" placeholder="{{user.name }}" readonly>
+					</div>
+					<div class="mb-3">
+						<label for="exampleFormControlInput1" class="form-label">Фамилия</label>
+						<input class="form-control" type="text" placeholder="{{user.surname }}" readonly>
+					</div>
+					<div class="mb-3">
+						<label for="exampleFormControlInput1" class="form-label">Почта</label>
+						<input class="form-control" type="text" placeholder="{{user.email }}" readonly>
+					</div>
+				</blockquote>
+				<div class="col-md-5">
+					<a class="btn btn-outline-success" href="{% url 'user:settings' %}">Изменить</a>
+					<a class="btn btn-outline-danger" href="{% url 'user:logout' %}">Выйти</a>
+				</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

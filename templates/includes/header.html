@@ -16,10 +16,9 @@
                             <a class="nav-link active" aria-current="page" href="{% url 'feedback:index' %}">Обратная связь</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Личный кабинет</a>
+                            <a class="nav-link active" aria-current="page" href="{% url 'user:profile' %}">Личный кабинет</a>
                         </li>
                     </ul>
-                    <a class="btn btn-danger" href="{% url 'user:logout' %}">Выйти</a>
                 {% else %}
                     <a class="btn btn-success m-2"  href="{% url 'user:login' %}">Войти</a>
                     <a class="btn btn-success" href="{% url 'user:signup' %}">Зарегистрироваться</a>

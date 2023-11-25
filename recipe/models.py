@@ -48,3 +48,5 @@ class Recipe(models.Model):
 
     class Meta:
         ordering = ['created_on']
+        verbose_name = "рецепт"
+        verbose_name_plural = "рецепты"

@@ -8,6 +8,4 @@ class CustomUserAdmin(admin.ModelAdmin):
     list_display = (
         'email',
         'username',
-        'is_staff',
-        'img_tmb',
     )

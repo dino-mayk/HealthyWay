@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container marketing">
+	<div class="container">
+		<main>
+		<div class="py-5">
+			<h2>Настройки</h2>
+		</div>
+	</div>
+	<div class="shadow-lg p-3 mb-5 bg-body rounded">
+		<div class="row featurette">
+			<form class="needs-validation" action="{% url 'user:settings' %}" method="post" novalidate>
+				{% csrf_token %}
+				{{ form.as_p }}
+				<hr class="my-4">
+				<button type="submit" class="btn btn-outline-success btn-lg">Сохранить</button>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}
