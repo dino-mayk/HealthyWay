@@ -27,6 +27,14 @@
 			</ul>
 		</div>
 	</div>
+
+	{% include 'includes/add_comment_card.html' with form=form %}
+
+	{% for comment in comments %}
+		{% if comment.show %}
+			{% include 'includes/comment_card.html' with comment=comment %}
+		{% endif %}
+	{% endfor %}
 </div>
 
 {% endblock %}

@@ -3,11 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.shortcuts import redirect, render
 
-from user.forms import (
-    CustomUserLoginForm,
-    CustomUserSignUpForm,
-    CustomUserProfileForm,
-)
+from user.forms import (CustomUserLoginForm, CustomUserProfileForm,
+                        CustomUserSignUpForm)
 
 
 class Login(LoginView):

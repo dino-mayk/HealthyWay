@@ -17,6 +17,7 @@ ALLOWED_HOSTS = [
 INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
     'recipe.apps.RecipeConfig',
+		'event.apps.EventConfig',
     'sport.apps.SportConfig',
     'user.apps.UserConfig',
     'feedback.apps.FeedbackConfig',

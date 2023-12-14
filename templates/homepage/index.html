@@ -56,6 +56,19 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="shadow-lg p-3 mb-5 bg-body rounded">
+		<div class="row featurette">
+			<div class="col-md-5">
+				<img src="{% static 'other/img/events.jpg' %}" height="500" и width="500" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+			</div>
+			<div class="col-md-7">
+				<h2 class="featurette-heading">Мероприятия</h2>
+				<p class="lead">Самые здоровые мероприятия Липецка, области и России вцелом!</p>
+					<a class="btn btn-outline-success btn-lg m-1" href="{% url 'event:list' %}">Подробнее</a>
+			</div>
+		</div>
+	</div>
 </div>
 
 {% endblock %}

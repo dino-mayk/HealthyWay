@@ -18,6 +18,13 @@ urlpatterns = [
         ),
         name='recipe',
     ),
+		path(
+        'event/',
+        include(
+            'event.urls',
+        ),
+        name='event',
+    ),
     path(
         'sport/',
         include(

@@ -4,9 +4,10 @@ from django_cleanup.signals import cleanup_pre_delete
 from sorl.thumbnail import delete, get_thumbnail
 from tinymce.models import HTMLField
 
+from user.models import CustomUser
+
 
 class Recipe(models.Model):
-
     image = models.ImageField(
         upload_to='uploads/preview/%Y/%m',
         null=True,
@@ -50,3 +51,23 @@ class Recipe(models.Model):
         ordering = ['created_on']
         verbose_name = "рецепт"
         verbose_name_plural = "рецепты"
+
+class Comment(models.Model):
+    text = models.TextField()
+    user = models.ForeignKey(
+        CustomUser,
+        on_delete=models.CASCADE,
+        related_name="пользователь",
+		)
+    recipe = models.ForeignKey(
+        Recipe,
+        on_delete=models.CASCADE,
+        related_name='рецепт',
+    )
+    show = models.BooleanField(default=False)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['created_on']
+        verbose_name = "комментарий"
+        verbose_name_plural = "комментарии"

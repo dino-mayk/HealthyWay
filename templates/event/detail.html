@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container marketing">
+	<div class="shadow-lg p-3 mb-5 bg-body rounded">
+		<div class="row featurette">
+			<div class="col-md-7">
+				<h2 class="featurette-heading">{{ event.title }}</h2>
+				<p class="lead">{{ event.description | safe }}</p>
+			</div>
+			<div class="col-md-5">
+				<img src="{{ event.image.url }}" height="500" и width="500" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+			</div>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="card-body">
+			<h2 class="featurette-heading">О мероприятии:</h2>
+				{% for event_schedule in event_schedule %}
+					<p>{{ event_schedule }}</p>
+				{% endfor %}
+		</div>
+	</div>
+</div>
+
+{% endblock %}

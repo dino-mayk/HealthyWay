@@ -1,0 +1,9 @@
+<hr class="my-4">
+	<div class="card">
+		<div class="card-header">
+			{{ comment.user.username }} {{ comment.created_on }}
+		</div>
+		<div class="card-body">
+			<p class="card-text">{{ comment.text | safe }}</p>
+		</div>
+</div>
